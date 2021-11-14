@@ -4,4 +4,5 @@
   align-items: center;
   padding: 28px 48px;
   width: calc(100vw - 96px);
+  max-width: 928px;
 }

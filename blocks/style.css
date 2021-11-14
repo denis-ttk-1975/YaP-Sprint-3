@@ -20,14 +20,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 928px;
 }
 .lead {
   display: flex;
   flex-direction: column;
-  width: 984px;
-  /* align-items: center; */
+  max-width: 928px;
+  align-items: center;
 }
 .lead__title {
+  max-width: 720px;
   text-align: center;
   font-weight: 900;
   font-size: 96px;
@@ -40,8 +42,12 @@
   font-size: 30px;
   line-height: 1.2;
   margin: 4px 0 64px;
+  max-width: 640px;
+}
+.lead__image-container {
 }
 .lead__image {
+  width: 100%;
 }
 .lead__image-title {
   font-weight: 400;
@@ -51,7 +57,7 @@
   margin-bottom: 29px;
 }
 .intro {
-  padding-right: 294px;
+  padding-right: calc(100% - 690px - 12px);
   padding-left: 12px;
 }
 .intro__title {
@@ -88,11 +94,15 @@
   font-size: 12px;
 }
 .photo-grid {
-  max-width: 1184px;
+  /* max-width: 1184px; */
+  max-width: 928px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 213px;
-  gap: 16px;
+  grid-template-columns: repeat(3, 300px);
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* grid-template-rows: 213px; */
+  grid-template-rows: 225px;
+  gap: 14px;
+  /* gap: 16px; */
 }
 .photo-grid__item {
 }
@@ -105,7 +115,7 @@
   grid-template-columns: 440px 456px;
   grid-template-rows: auto auto;
   gap: 48px 32px;
-  padding-bottom: 80px;
+  padding-bottom: 84px;
 }
 .place__title {
   font-weight: 900;
@@ -120,6 +130,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.7;
+  color: #aaa;
 }
 .place__link {
   font-weight: 400;
@@ -137,19 +148,37 @@
   margin-top: 0;
 }
 .cover {
-  width: 100%;
-  background-image: url(./../images/Railway_station.jpg);
-  /* padding-bottom: 100%; */
-  height: calc(0.625 * 100vw);
-  max-height: 640px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
 }
 .cover__overlay {
   /* width: 100%; */
   text-decoration: none;
+  position: relative;
+
+  min-width: 1024px;
+  background-image: url(./../images/Railway_station.jpg);
+  /* padding-bottom: 100%; */
+  height: calc(0.625 * 100vw);
+  max-height: 640px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover__overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.cover__overlay:hover::before {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .cover__title {
   color: #fff;
@@ -157,6 +186,8 @@
   font-size: 72px;
   line-height: 1.055;
   text-align: center;
+  z-index: 2;
+  max-width: 560px;
 }
 .cover__subtitle {
   color: #fff;
@@ -165,11 +196,14 @@
   line-height: 1.22;
   text-decoration: none;
   text-align: center;
+  z-index: 2;
+  max-width: 360px;
 }
 .footer {
   display: flex;
   justify-content: space-between;
   min-width: 928px;
+  padding-top: 92px;
 }
 .footer__links {
   display: grid;
