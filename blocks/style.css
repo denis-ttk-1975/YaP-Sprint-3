@@ -1,4 +1,5 @@
 .header {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,6 +8,8 @@
   max-width: 928px;
 }
 .logo {
+  height: 52px;
+  width: 176px;
 }
 .langChoice {
   min-width: 78px;
@@ -26,8 +29,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 928px;
-  width: 100vw;
 }
 .lead {
   display: flex;
@@ -64,8 +65,8 @@
   margin-bottom: 29px;
 }
 .intro {
-  padding-right: calc(100% - 690px - 12px);
-  padding-left: 12px;
+  padding-right: calc(100% - 690px - 0px);
+  padding-left: 0px;
 }
 .intro__title {
   display: block;
@@ -112,7 +113,9 @@
   /* gap: 16px; */
 }
 .photo-grid__item {
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .places {
   max-width: 928px;
@@ -156,17 +159,23 @@
   margin-top: 0;
 }
 .cover {
+  width: 99%;
 }
 .cover__overlay {
   /* width: 100%; */
   text-decoration: none;
   position: relative;
+  width: 100%;
 
-  min-width: 1024px;
+  min-width: 768px;
   background-image: url(./../images/Railway_station.jpg);
-  /* padding-bottom: 100%; */
-  height: calc(0.625 * 100vw);
-  max-height: 640px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* padding-bottom: 62.5%; */
+  box-sizing: border-box;
+  /* height: calc(0.625 * 100vw); */
+  /* max-height: 640px; */
 
   display: flex;
   flex-direction: column;
@@ -240,8 +249,6 @@
   }
 
   .content {
-    max-width: 984px;
-    width: 100vw;
   }
   .lead {
     max-width: 984px;
@@ -267,8 +274,10 @@
     margin-bottom: 29px;
   }
   .intro {
-    padding-right: calc(100% - 690px - 12px);
+    /* padding-right: calc(100% - 690px - 12px); */
+    padding-right: calc(984px - 12px - 690px);
     padding-left: 12px;
+    max-width: 984px;
   }
   .intro__title {
     display: block;
@@ -344,23 +353,50 @@
     margin-top: 0;
   }
   .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .cover__overlay {
-    /* width: 100%; */
+    width: 100%;
     text-decoration: none;
     position: relative;
 
-    min-width: 1184px;
+    max-width: 1184px;
     background-image: url(./../images/Railway_station.jpg);
-    /* padding-bottom: 100%; */
-    height: calc(0.625 * 100vw);
-    max-height: 640px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* height: calc(0.625 * 100vw);
+    max-height: 640px; */
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
+  /* .cover__overlay {
+
+    text-decoration: none;
+    position: relative;
+    width: 100%;
+
+    min-width: 768px;
+    background-image: url(./../images/Railway_station.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
 
   .cover__overlay::before {
     content: "";
@@ -451,8 +487,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 768px;
-    width: 100vw;
+    /* max-width: 768px; */
+    width: 99vw;
   }
   .lead {
     display: flex;
@@ -488,6 +524,7 @@
     line-height: 1.4;
     margin: 8px 0;
     margin-bottom: 29px;
+    padding-left: 24px;
   }
   .intro {
     padding-right: calc(100% - 690px - 12px);
@@ -587,11 +624,14 @@
     text-decoration: none;
     position: relative;
 
-    min-width: 768px;
+    min-width: 320px;
     background-image: url(./../images/Railway_station.jpg);
-    /* padding-bottom: 100%; */
-    height: calc(0.625 * 100vw);
-    max-height: 480px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    /* height: calc(0.625 * 100vw);
+    max-height: 480px; */
 
     display: flex;
     flex-direction: column;
@@ -635,7 +675,7 @@
   .footer {
     display: flex;
     justify-content: space-between;
-    min-width: 928px;
+    min-width: 720px;
     padding-top: 92px;
     padding-bottom: 24px;
   }
@@ -669,6 +709,8 @@
     max-width: 288px;
   }
   .logo {
+    height: 42px;
+    width: 172px;
   }
   .langChoice {
     min-width: 78px;
@@ -725,6 +767,7 @@
     line-height: 1.4;
     margin: 8px 0;
     margin-bottom: 5px;
+    padding-left: 16px;
   }
   .intro {
     padding-right: 16px;
@@ -793,10 +836,14 @@
     line-height: 1.095;
     margin: 0;
     max-width: 288px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .place__website {
     align-self: end;
     max-width: 288px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .place__url-heading {
     font-weight: 400;
@@ -812,6 +859,10 @@
   }
   .place__image {
     width: 100vw;
+  }
+  .place__text-block {
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .place__paragraph {
     font-weight: 400;
@@ -888,7 +939,7 @@
     color: #fff;
     text-decoration: none;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.125;
     padding-top: 32px;
   }
